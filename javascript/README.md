@@ -176,20 +176,20 @@
 
 ## Strings
 
-  - Use single quotes `''` for strings.
+  - Use double quotes `""` for strings.  This is for a couple of reasons but mainly: 1) it's more natural for newcomers and 2) The [JSON](http://www.json.org/) standard uses double quotation marks for keys. 
 
     ```javascript
     // bad
-    var name = "Bob Parr";
-
-    // good
     var name = 'Bob Parr';
 
+    // good
+    var name = "Bob Parr";
+
     // bad
-    var fullName = "Bob " + this.lastName;
+    var fullName = 'Bob ' + this.lastName;
 
     // good
-    var fullName = 'Bob ' + this.lastName;
+    var fullName = "Bob " + this.lastName;
     ```
 
   - Strings longer than 100 characters should be written across multiple lines using string concatenation.
