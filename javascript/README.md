@@ -762,7 +762,7 @@
 
 ## Whitespace
 
-  - Use soft tabs set to 2 spaces.
+  - Use soft tabs set to 2 spaces.  **TODO: CodeAbode is currently on tab style - update style guide** 
 
     ```javascript
     // bad
