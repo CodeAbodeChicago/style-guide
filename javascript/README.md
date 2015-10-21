@@ -6,10 +6,10 @@
 
   1. [Naming Conventions](#naming-conventions)
   1. [Variables](#variables)
-  1. [Types](#types)
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
   1. [Strings](#strings)
+  1. [Types](#types)
+  1. [Arrays](#arrays)
+  1. [Objects](#objects)
   1. [Functions](#functions)
   1. [Properties](#properties)
   1. [Hoisting](#hoisting)
@@ -183,10 +183,7 @@
     var superPower = new SuperPower();
     ```
 
-  - Use one `var` declaration per variable.
-    It's easier to add new variable declarations this way, and you never have
-    to worry about swapping out a `;` for a `,` or introducing punctuation-only
-    diffs.
+  - Use one `var` declaration per variable. It's easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs.
 
     ```javascript
     // bad
@@ -294,144 +291,6 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-
-## Types
-
-  - **Primitives**: When you access a primitive type you work directly on its value.
-
-    + `string`
-    + `number`
-    + `boolean`
-    + `null`
-    + `undefined`
-
-    ```javascript
-    var foo = 1;
-    var bar = foo;
-
-    bar = 9;
-
-    console.log(foo, bar); // => 1, 9
-    ```
-  - **Complex**: When you access a complex type you work on a reference to its value.
-
-    + `object`
-    + `array`
-    + `function`
-
-    ```javascript
-    var foo = [1, 2];
-    var bar = foo;
-
-    bar[0] = 9;
-
-    console.log(foo[0], bar[0]); // => 9, 9
-    ```
-
-**[⬆ back to top](#table-of-contents)**
-
-## Objects
-
-  - Use the literal syntax for object creation.
-
-    ```javascript
-    // bad
-    var item = new Object();
-
-    // good
-    var item = {};
-    ```
-
-  - Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61).
-
-    ```javascript
-    // bad
-    var superman = {
-      default: { clark: 'kent' },
-      private: true
-    };
-
-    // good
-    var superman = {
-      defaults: { clark: 'kent' },
-      hidden: true
-    };
-    ```
-
-  - Use readable synonyms in place of reserved words.
-
-    ```javascript
-    // bad
-    var superman = {
-      class: 'alien'
-    };
-
-    // bad
-    var superman = {
-      klass: 'alien'
-    };
-
-    // good
-    var superman = {
-      type: 'alien'
-    };
-    ```
-
-**[⬆ back to top](#table-of-contents)**
-
-## Arrays
-
-  - Use the literal syntax for array creation.
-
-    ```javascript
-    // bad
-    var items = new Array();
-
-    // good
-    var items = [];
-    ```
-
-  - Use Array#push instead of direct assignment to add items to an array.
-
-    ```javascript
-    var someStack = [];
-
-
-    // bad
-    someStack[someStack.length] = 'abracadabra';
-
-    // good
-    someStack.push('abracadabra');
-    ```
-
-  - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
-
-    ```javascript
-    var len = items.length;
-    var itemsCopy = [];
-    var i;
-
-    // bad
-    for (i = 0; i < len; i++) {
-      itemsCopy[i] = items[i];
-    }
-
-    // good
-    itemsCopy = items.slice();
-    ```
-
-  - To convert an array-like object to an array, use Array#slice.
-
-    ```javascript
-    function trigger() {
-      var args = Array.prototype.slice.call(arguments);
-      ...
-    }
-    ```
-
-**[⬆ back to top](#table-of-contents)**
-
-
 ## Strings
 
   - Use double quotes `""` for strings.  This is for a couple of reasons but mainly: 1) it's more natural for newcomers and 2) The [JSON](http://www.json.org/) standard uses double quotation marks for keys.
@@ -451,7 +310,8 @@
     ```
 
   - Strings longer than 100 characters should be written across multiple lines using string concatenation.
-  - Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40).
+
+    - Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40).
 
     ```javascript
     // bad
@@ -516,6 +376,140 @@
 
 **[⬆ back to top](#table-of-contents)**
 
+## Types
+
+  - **Primitives**: When you access a primitive type you work directly on its value.
+
+    + `string`
+    + `number`
+    + `boolean`
+    + `null`
+    + `undefined`
+
+    ```javascript
+    var foo = 1;
+    var bar = foo;
+
+    bar = 9;
+
+    console.log(foo, bar); // => 1, 9
+    ```
+  - **Complex**: When you access a complex type you work on a reference to its value.
+
+    + `object`
+    + `array`
+    + `function`
+
+    ```javascript
+    var foo = [1, 2];
+    var bar = foo;
+
+    bar[0] = 9;
+
+    console.log(foo[0], bar[0]); // => 9, 9
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Arrays
+
+  - Use the literal syntax for array creation.
+
+    ```javascript
+    // bad
+    var items = new Array();
+
+    // good
+    var items = [];
+    ```
+
+  - Use Array#push instead of direct assignment to add items to an array.
+
+    ```javascript
+    var someStack = [];
+
+    // bad
+    someStack[someStack.length] = 'abracadabra';
+
+    // good
+    someStack.push('abracadabra');
+    ```
+
+  - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+
+    ```javascript
+    var len = items.length;
+    var itemsCopy = [];
+    var i;
+
+    // bad
+    for (i = 0; i < len; i++) {
+      itemsCopy[i] = items[i];
+    }
+
+    // good
+    itemsCopy = items.slice();
+    ```
+
+  - To convert an array-like object to an array, use Array#slice.
+
+    ```javascript
+    function trigger() {
+      var args = Array.prototype.slice.call(arguments);
+      ...
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Objects
+
+  - Use the literal syntax for object creation.
+
+    ```javascript
+    // bad
+    var item = new Object();
+
+    // good
+    var item = {};
+    ```
+
+  - Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61).
+
+    ```javascript
+    // bad
+    var superman = {
+      default: { clark: 'kent' },
+      private: true
+    };
+
+    // good
+    var superman = {
+      defaults: { clark: 'kent' },
+      hidden: true
+    };
+    ```
+
+  - Use readable synonyms in place of reserved words.
+
+    ```javascript
+    // bad
+    var superman = {
+      class: 'alien'
+    };
+
+    // bad
+    var superman = {
+      klass: 'alien'
+    };
+
+    // good
+    var superman = {
+      type: 'alien'
+    };
+    ```
+
+**[⬆ back to top](#table-of-contents)**
 
 ## Functions
 
