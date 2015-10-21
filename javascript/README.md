@@ -2,16 +2,16 @@
 
 *Forked from Airbnb's "mostly reasonable approach to JavaScript"*
 
-
 ## Table of Contents
 
+  1. [Naming Conventions](#naming-conventions)
+  1. [Variables](#variables)
   1. [Types](#types)
   1. [Objects](#objects)
   1. [Arrays](#arrays)
   1. [Strings](#strings)
   1. [Functions](#functions)
   1. [Properties](#properties)
-  1. [Variables](#variables)
   1. [Hoisting](#hoisting)
   1. [Comparison Operators & Equality](#comparison-operators--equality)
   1. [Blocks](#blocks)
@@ -20,7 +20,6 @@
   1. [Commas](#commas)
   1. [Semicolons](#semicolons)
   1. [Type Casting & Coercion](#type-casting--coercion)
-  1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Constructors](#constructors)
   1. [Events](#events)
@@ -30,6 +29,271 @@
   1. [Performance](#performance)
   1. [Resources](#resources)
   1. [License](#license)
+
+
+
+## Naming Conventions
+
+  - The first letter of a variable name can be a letter, `$` or `_`.  Subsequent letters can be letters, numbers, `$` or `_`.  (Note: you can use other unicode characters, but you shouldn't - see this online [variable name validator](https://mothereff.in/js-variables).)
+
+  - Variable names cannot be JavaScript [keywords](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords) (e.g. `var`, `else`, etc.) and should not use any existing global variables provided by the browser (`name`, `location`, etc.).
+
+  - Avoid single letter names. Be descriptive with your naming.
+
+    ```javascript
+    // bad
+    var s = 25;
+
+    // good
+    var testScore = 25;
+    ```
+
+  - Use lower [camelCase](http://c2.com/cgi/wiki?CamelCase) when naming objects, functions, and instances.
+
+    ```javascript
+    // bad
+    var OBJEcttsssss = {};
+    var this_is_my_object = {};
+    var o = {};
+    function c() {}
+
+    // good
+    var newMovieData = {};
+    function gradeTestScores() {}
+    ```
+
+  - Use [PascalCase](http://c2.com/cgi/wiki?PascalCase) when naming constructors or classes.
+
+    ```javascript
+    // bad
+    function user(options) {
+      this.name = options.name;
+    }
+    var bad = new user({
+      name: 'nope'
+    });
+
+    // good
+    function User(options) {
+      this.name = options.name;
+    }
+    var good = new User({
+      name: 'yup'
+    });
+    ```
+
+  - Use a leading underscore `_` when naming private properties.  Note: this does not make those properties private - it is just a naming convention.
+
+    ```javascript
+    // bad
+    this.__firstName__ = 'Panda';
+    this.firstName_ = 'Panda';
+
+    // good
+    this._firstName = 'Panda';
+    ```
+
+  - When saving a reference to `this` use `_this`.
+
+    ```javascript
+    // bad
+    function() {
+      var self = this;
+      return function() {
+        console.log(self);
+      };
+    }
+
+    // bad
+    function() {
+      var that = this;
+      return function() {
+        console.log(that);
+      };
+    }
+
+    // good
+    function() {
+      var _this = this;
+      return function() {
+        console.log(_this);
+      };
+    }
+    ```
+
+  - Name your functions. This is helpful for stack traces.
+
+    ```javascript
+    // bad
+    var log = function(msg) {
+      console.log(msg);
+    };
+
+    // good
+    var log = function log(msg) {
+      console.log(msg);
+    };
+    ```
+
+  - **Note:** IE8 and below exhibit some quirks with named function expressions.  See [http://kangax.github.io/nfe/](http://kangax.github.io/nfe/) for more info.
+
+  - When naming files, prefer to use filenames that have no spaces.  Use dashes or camelCase as word separators.
+
+    ```
+    // bad
+    super awesome eye tracker.js
+
+    // good
+    super-awesome-eye-tracker.js
+    SuperAwesomeEyeTracker.js
+
+    ```
+
+  - If your file exports a single class, your filename should be exactly the name of the class.
+
+    ```javascript
+    // file contents
+    class CheckBox {
+      // ...
+    }
+    module.exports = CheckBox;
+
+    // in some other file
+    // bad
+    var CheckBox = require('./checkBox');
+
+    // bad
+    var CheckBox = require('./check_box');
+
+    // good
+    var CheckBox = require('./CheckBox');
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Variables
+
+  - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
+
+    ```javascript
+    // bad
+    superPower = new SuperPower();
+
+    // good
+    var superPower = new SuperPower();
+    ```
+
+  - Use one `var` declaration per variable.
+    It's easier to add new variable declarations this way, and you never have
+    to worry about swapping out a `;` for a `,` or introducing punctuation-only
+    diffs.
+
+    ```javascript
+    // bad
+    var items = getItems(),
+        goSportsTeam = true,
+        dragonball = 'z';
+
+    // bad
+    // (compare to above, and try to spot the mistake)
+    var items = getItems(),
+        goSportsTeam = true;
+        dragonball = 'z';
+
+    // good
+    var items = getItems();
+    var goSportsTeam = true;
+    var dragonball = 'z';
+    ```
+
+  - Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+
+    ```javascript
+    // bad
+    var i, len, dragonball,
+        items = getItems(),
+        goSportsTeam = true;
+
+    // bad
+    var i;
+    var items = getItems();
+    var dragonball;
+    var goSportsTeam = true;
+    var len;
+
+    // good
+    var items = getItems();
+    var goSportsTeam = true;
+    var dragonball;
+    var length;
+    var i;
+    ```
+
+  - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
+
+    ```javascript
+    // bad
+    function() {
+      test();
+      console.log('doing stuff..');
+
+      //..other stuff..
+
+      var name = getName();
+
+      if (name === 'test') {
+        return false;
+      }
+
+      return name;
+    }
+
+    // good
+    function() {
+      var name = getName();
+
+      test();
+      console.log('doing stuff..');
+
+      //..other stuff..
+
+      if (name === 'test') {
+        return false;
+      }
+
+      return name;
+    }
+
+    // bad - unnecessary function call
+    function() {
+      var name = getName();
+
+      if (!arguments.length) {
+        return false;
+      }
+
+      this.setFirstName(name);
+
+      return true;
+    }
+
+    // good
+    function() {
+      var name;
+
+      if (!arguments.length) {
+        return false;
+      }
+
+      name = getName();
+      this.setFirstName(name);
+
+      return true;
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
 
 ## Types
 
@@ -170,7 +434,7 @@
 
 ## Strings
 
-  - Use double quotes `""` for strings.  This is for a couple of reasons but mainly: 1) it's more natural for newcomers and 2) The [JSON](http://www.json.org/) standard uses double quotation marks for keys. 
+  - Use double quotes `""` for strings.  This is for a couple of reasons but mainly: 1) it's more natural for newcomers and 2) The [JSON](http://www.json.org/) standard uses double quotation marks for keys.
 
     ```javascript
     // bad
@@ -346,129 +610,6 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-
-## Variables
-
-  - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
-
-    ```javascript
-    // bad
-    superPower = new SuperPower();
-
-    // good
-    var superPower = new SuperPower();
-    ```
-
-  - Use one `var` declaration per variable.
-    It's easier to add new variable declarations this way, and you never have
-    to worry about swapping out a `;` for a `,` or introducing punctuation-only
-    diffs.
-
-    ```javascript
-    // bad
-    var items = getItems(),
-        goSportsTeam = true,
-        dragonball = 'z';
-
-    // bad
-    // (compare to above, and try to spot the mistake)
-    var items = getItems(),
-        goSportsTeam = true;
-        dragonball = 'z';
-
-    // good
-    var items = getItems();
-    var goSportsTeam = true;
-    var dragonball = 'z';
-    ```
-
-  - Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
-
-    ```javascript
-    // bad
-    var i, len, dragonball,
-        items = getItems(),
-        goSportsTeam = true;
-
-    // bad
-    var i;
-    var items = getItems();
-    var dragonball;
-    var goSportsTeam = true;
-    var len;
-
-    // good
-    var items = getItems();
-    var goSportsTeam = true;
-    var dragonball;
-    var length;
-    var i;
-    ```
-
-  - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
-
-    ```javascript
-    // bad
-    function() {
-      test();
-      console.log('doing stuff..');
-
-      //..other stuff..
-
-      var name = getName();
-
-      if (name === 'test') {
-        return false;
-      }
-
-      return name;
-    }
-
-    // good
-    function() {
-      var name = getName();
-
-      test();
-      console.log('doing stuff..');
-
-      //..other stuff..
-
-      if (name === 'test') {
-        return false;
-      }
-
-      return name;
-    }
-
-    // bad - unnecessary function call
-    function() {
-      var name = getName();
-
-      if (!arguments.length) {
-        return false;
-      }
-
-      this.setFirstName(name);
-
-      return true;
-    }
-
-    // good
-    function() {
-      var name;
-
-      if (!arguments.length) {
-        return false;
-      }
-
-      name = getName();
-      this.setFirstName(name);
-
-      return true;
-    }
-    ```
-
-**[⬆ back to top](#table-of-contents)**
 
 
 ## Hoisting
@@ -646,7 +787,7 @@
     } else {
       thing3();
     }
-    
+
     // good
     if (test) {
       thing1();
@@ -756,7 +897,7 @@
 
 ## Whitespace
 
-  - Use soft tabs set to 2 spaces.  **TODO: CodeAbode is currently on tab style - update style guide** 
+  - Use soft tabs set to 2 spaces.  **TODO: CodeAbode is currently on tab style - update style guide**
 
     ```javascript
     // bad
@@ -1116,136 +1257,6 @@
     ```
 
 **[⬆ back to top](#table-of-contents)**
-
-
-## Naming Conventions
-
-  - Avoid single letter names. Be descriptive with your naming.
-
-    ```javascript
-    // bad
-    function q() {
-      // ...stuff...
-    }
-
-    // good
-    function query() {
-      // ..stuff..
-    }
-    ```
-
-  - Use camelCase when naming objects, functions, and instances.
-
-    ```javascript
-    // bad
-    var OBJEcttsssss = {};
-    var this_is_my_object = {};
-    var o = {};
-    function c() {}
-
-    // good
-    var thisIsMyObject = {};
-    function thisIsMyFunction() {}
-    ```
-
-  - Use PascalCase when naming constructors or classes.
-
-    ```javascript
-    // bad
-    function user(options) {
-      this.name = options.name;
-    }
-
-    var bad = new user({
-      name: 'nope'
-    });
-
-    // good
-    function User(options) {
-      this.name = options.name;
-    }
-
-    var good = new User({
-      name: 'yup'
-    });
-    ```
-
-  - Use a leading underscore `_` when naming private properties.
-
-    ```javascript
-    // bad
-    this.__firstName__ = 'Panda';
-    this.firstName_ = 'Panda';
-
-    // good
-    this._firstName = 'Panda';
-    ```
-
-  - When saving a reference to `this` use `_this`.
-
-    ```javascript
-    // bad
-    function() {
-      var self = this;
-      return function() {
-        console.log(self);
-      };
-    }
-
-    // bad
-    function() {
-      var that = this;
-      return function() {
-        console.log(that);
-      };
-    }
-
-    // good
-    function() {
-      var _this = this;
-      return function() {
-        console.log(_this);
-      };
-    }
-    ```
-
-  - Name your functions. This is helpful for stack traces.
-
-    ```javascript
-    // bad
-    var log = function(msg) {
-      console.log(msg);
-    };
-
-    // good
-    var log = function log(msg) {
-      console.log(msg);
-    };
-    ```
-
-  - **Note:** IE8 and below exhibit some quirks with named function expressions.  See [http://kangax.github.io/nfe/](http://kangax.github.io/nfe/) for more info.
-
-  - If your file exports a single class, your filename should be exactly the name of the class.
-    ```javascript
-    // file contents
-    class CheckBox {
-      // ...
-    }
-    module.exports = CheckBox;
-
-    // in some other file
-    // bad
-    var CheckBox = require('./checkBox');
-
-    // bad
-    var CheckBox = require('./check_box');
-
-    // good
-    var CheckBox = require('./CheckBox');
-    ```
-
-**[⬆ back to top](#table-of-contents)**
-
 
 ## Accessors
 

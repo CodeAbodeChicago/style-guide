@@ -1,0 +1,2569 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>README</title></head><body><article class="markdown-body"><h1 id="codeabode-javascript-es5-style-guide"><a name="user-content-codeabode-javascript-es5-style-guide" href="#codeabode-javascript-es5-style-guide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CodeAbode JavaScript (ES5) Style Guide</h1>
+<p><em>Forked from Airbnb&rsquo;s &ldquo;mostly reasonable approach to JavaScript&rdquo;</em></p>
+<h2 id="table-of-contents"><a name="user-content-table-of-contents" href="#table-of-contents" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Table of Contents</h2>
+<ol>
+<li><a href="#types">Types</a></li>
+<li><a href="#objects">Objects</a></li>
+<li><a href="#arrays">Arrays</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#hoisting">Hoisting</a></li>
+<li><a href="#comparison-operators--equality">Comparison Operators &amp; Equality</a></li>
+<li><a href="#blocks">Blocks</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#whitespace">Whitespace</a></li>
+<li><a href="#commas">Commas</a></li>
+<li><a href="#semicolons">Semicolons</a></li>
+<li><a href="#type-casting--coercion">Type Casting &amp; Coercion</a></li>
+<li><a href="#naming-conventions">Naming Conventions</a></li>
+<li><a href="#accessors">Accessors</a></li>
+<li><a href="#constructors">Constructors</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#modules">Modules</a></li>
+<li><a href="#ecmascript-5-compatibility">ECMAScript 5 Compatibility</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#performance">Performance</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#license">License</a></li>
+</ol>
+<h2 id="types"><a name="user-content-types" href="#types" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Types</h2>
+<ul>
+<li>
+<p><strong>Primitives</strong>: When you access a primitive type you work directly on its value.</p>
+<ul>
+<li><code>string</code></li>
+<li><code>number</code></li>
+<li><code>boolean</code></li>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+</ul>
+<p><pre><code class="javascript">var foo = 1;
+var bar = foo;
+
+bar = 9;
+
+console.log(foo, bar); // =&gt; 1, 9
+</code></pre><br />
+  - <strong>Complex</strong>: When you access a complex type you work on a reference to its value.</p>
+<ul>
+<li><code>object</code></li>
+<li><code>array</code></li>
+<li><code>function</code></li>
+</ul>
+<pre><code class="javascript">var foo = [1, 2];
+var bar = foo;
+
+bar[0] = 9;
+
+console.log(foo[0], bar[0]); // =&gt; 9, 9
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="objects"><a name="user-content-objects" href="#objects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Objects</h2>
+<ul>
+<li>
+<p>Use the literal syntax for object creation.</p>
+<pre><code class="javascript">// bad
+var item = new Object();
+
+// good
+var item = {};
+</code></pre>
+
+</li>
+<li>
+<p>Don&rsquo;t use <a href="http://es5.github.io/#x7.6.1">reserved words</a> as keys. It won&rsquo;t work in IE8. <a href="https://github.com/airbnb/javascript/issues/61">More info</a>.</p>
+<pre><code class="javascript">// bad
+var superman = {
+  default: { clark: 'kent' },
+  private: true
+};
+
+// good
+var superman = {
+  defaults: { clark: 'kent' },
+  hidden: true
+};
+</code></pre>
+
+</li>
+<li>
+<p>Use readable synonyms in place of reserved words.</p>
+<pre><code class="javascript">// bad
+var superman = {
+  class: 'alien'
+};
+
+// bad
+var superman = {
+  klass: 'alien'
+};
+
+// good
+var superman = {
+  type: 'alien'
+};
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="arrays"><a name="user-content-arrays" href="#arrays" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Arrays</h2>
+<ul>
+<li>
+<p>Use the literal syntax for array creation.</p>
+<pre><code class="javascript">// bad
+var items = new Array();
+
+// good
+var items = [];
+</code></pre>
+
+</li>
+<li>
+<p>Use Array#push instead of direct assignment to add items to an array.</p>
+<pre><code class="javascript">var someStack = [];
+
+
+// bad
+someStack[someStack.length] = 'abracadabra';
+
+// good
+someStack.push('abracadabra');
+</code></pre>
+
+</li>
+<li>
+<p>When you need to copy an array use Array#slice. <a href="http://jsperf.com/converting-arguments-to-an-array/7">jsPerf</a></p>
+<pre><code class="javascript">var len = items.length;
+var itemsCopy = [];
+var i;
+
+// bad
+for (i = 0; i &lt; len; i++) {
+  itemsCopy[i] = items[i];
+}
+
+// good
+itemsCopy = items.slice();
+</code></pre>
+
+</li>
+<li>
+<p>To convert an array-like object to an array, use Array#slice.</p>
+<pre><code class="javascript">function trigger() {
+  var args = Array.prototype.slice.call(arguments);
+  ...
+}
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="strings"><a name="user-content-strings" href="#strings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Strings</h2>
+<ul>
+<li>
+<p>Use double quotes <code>""</code> for strings.  This is for a couple of reasons but mainly: 1) it&rsquo;s more natural for newcomers and 2) The <a href="http://www.json.org/">JSON</a> standard uses double quotation marks for keys. </p>
+<pre><code class="javascript">// bad
+var name = 'Bob Parr';
+
+// good
+var name = &quot;Bob Parr&quot;;
+
+// bad
+var fullName = 'Bob ' + this.lastName;
+
+// good
+var fullName = &quot;Bob &quot; + this.lastName;
+</code></pre>
+
+</li>
+<li>
+<p>Strings longer than 100 characters should be written across multiple lines using string concatenation.</p>
+</li>
+<li>
+<p>Note: If overused, long strings with concatenation could impact performance. <a href="http://jsperf.com/ya-string-concat">jsPerf</a> &amp; <a href="https://github.com/airbnb/javascript/issues/40">Discussion</a>.</p>
+<pre><code class="javascript">// bad
+var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
+
+// bad
+var errorMessage = 'This is a super long error that was thrown because \
+of Batman. When you stop to think about how Batman had anything to do \
+with this, you would get nowhere \
+fast.';
+
+// good
+var errorMessage = 'This is a super long error that was thrown because ' +
+  'of Batman. When you stop to think about how Batman had anything to do ' +
+  'with this, you would get nowhere fast.';
+</code></pre>
+
+</li>
+<li>
+<p>When programmatically building up a string, use Array#join instead of string concatenation. Mostly for IE: <a href="http://jsperf.com/string-vs-array-concat/2">jsPerf</a>.</p>
+<pre><code class="javascript">var items;
+var messages;
+var length;
+var i;
+
+messages = [{
+  state: 'success',
+  message: 'This one worked.'
+}, {
+  state: 'success',
+  message: 'This one worked as well.'
+}, {
+  state: 'error',
+  message: 'This one did not work.'
+}];
+
+length = messages.length;
+
+// bad
+function inbox(messages) {
+  items = '&lt;ul&gt;';
+
+  for (i = 0; i &lt; length; i++) {
+    items += '&lt;li&gt;' + messages[i].message + '&lt;/li&gt;';
+  }
+
+  return items + '&lt;/ul&gt;';
+}
+
+// good
+function inbox(messages) {
+  items = [];
+
+  for (i = 0; i &lt; length; i++) {
+    // use direct assignment in this case because we're micro-optimizing.
+    items[i] = '&lt;li&gt;' + messages[i].message + '&lt;/li&gt;';
+  }
+
+  return '&lt;ul&gt;' + items.join('') + '&lt;/ul&gt;';
+}
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="functions"><a name="user-content-functions" href="#functions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Functions</h2>
+<ul>
+<li>
+<p>Function expressions:</p>
+<pre><code class="javascript">// anonymous function expression
+var anonymous = function() {
+  return true;
+};
+
+// named function expression
+var named = function named() {
+  return true;
+};
+
+// immediately-invoked function expression (IIFE)
+(function() {
+  console.log('Welcome to the Internet. Please follow me.');
+})();
+</code></pre>
+
+</li>
+<li>
+<p>Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.</p>
+</li>
+<li>
+<p><strong>Note:</strong> ECMA-262 defines a <code>block</code> as a list of statements. A function declaration is not a statement. <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97">Read ECMA-262&rsquo;s note on this issue</a>.</p>
+<pre><code class="javascript">// bad
+if (currentUser) {
+  function test() {
+    console.log('Nope.');
+  }
+}
+
+// good
+var test;
+if (currentUser) {
+  test = function test() {
+    console.log('Yup.');
+  };
+}
+</code></pre>
+
+</li>
+<li>
+<p>Never name a parameter <code>arguments</code>. This will take precedence over the <code>arguments</code> object that is given to every function scope.</p>
+<pre><code class="javascript">// bad
+function nope(name, options, arguments) {
+  // ...stuff...
+}
+
+// good
+function yup(name, options, args) {
+  // ...stuff...
+}
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="properties"><a name="user-content-properties" href="#properties" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Properties</h2>
+<ul>
+<li>
+<p>Use dot notation when accessing properties.</p>
+<pre><code class="javascript">var luke = {
+  jedi: true,
+  age: 28
+};
+
+// bad
+var isJedi = luke['jedi'];
+
+// good
+var isJedi = luke.jedi;
+</code></pre>
+
+</li>
+<li>
+<p>Use subscript notation <code>[]</code> when accessing properties with a variable.</p>
+<pre><code class="javascript">var luke = {
+  jedi: true,
+  age: 28
+};
+
+function getProp(prop) {
+  return luke[prop];
+}
+
+var isJedi = getProp('jedi');
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="variables"><a name="user-content-variables" href="#variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Variables</h2>
+<ul>
+<li>
+<p>Always use <code>var</code> to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.</p>
+<pre><code class="javascript">// bad
+superPower = new SuperPower();
+
+// good
+var superPower = new SuperPower();
+</code></pre>
+
+</li>
+<li>
+<p>Use one <code>var</code> declaration per variable.<br />
+    It&rsquo;s easier to add new variable declarations this way, and you never have<br />
+    to worry about swapping out a <code>;</code> for a <code>,</code> or introducing punctuation-only<br />
+    diffs.</p>
+<pre><code class="javascript">// bad
+var items = getItems(),
+    goSportsTeam = true,
+    dragonball = 'z';
+
+// bad
+// (compare to above, and try to spot the mistake)
+var items = getItems(),
+    goSportsTeam = true;
+    dragonball = 'z';
+
+// good
+var items = getItems();
+var goSportsTeam = true;
+var dragonball = 'z';
+</code></pre>
+
+</li>
+<li>
+<p>Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.</p>
+<pre><code class="javascript">// bad
+var i, len, dragonball,
+    items = getItems(),
+    goSportsTeam = true;
+
+// bad
+var i;
+var items = getItems();
+var dragonball;
+var goSportsTeam = true;
+var len;
+
+// good
+var items = getItems();
+var goSportsTeam = true;
+var dragonball;
+var length;
+var i;
+</code></pre>
+
+</li>
+<li>
+<p>Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.</p>
+<pre><code class="javascript">// bad
+function() {
+  test();
+  console.log('doing stuff..');
+
+  //..other stuff..
+
+  var name = getName();
+
+  if (name === 'test') {
+    return false;
+  }
+
+  return name;
+}
+
+// good
+function() {
+  var name = getName();
+
+  test();
+  console.log('doing stuff..');
+
+  //..other stuff..
+
+  if (name === 'test') {
+    return false;
+  }
+
+  return name;
+}
+
+// bad - unnecessary function call
+function() {
+  var name = getName();
+
+  if (!arguments.length) {
+    return false;
+  }
+
+  this.setFirstName(name);
+
+  return true;
+}
+
+// good
+function() {
+  var name;
+
+  if (!arguments.length) {
+    return false;
+  }
+
+  name = getName();
+  this.setFirstName(name);
+
+  return true;
+}
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="hoisting"><a name="user-content-hoisting" href="#hoisting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hoisting</h2>
+<ul>
+<li>
+<p>Variable declarations get hoisted to the top of their scope, but their assignment does not.</p>
+<pre><code class="javascript">// we know this wouldn't work (assuming there
+// is no notDefined global variable)
+function example() {
+  console.log(notDefined); // =&gt; throws a ReferenceError
+}
+
+// creating a variable declaration after you
+// reference the variable will work due to
+// variable hoisting. Note: the assignment
+// value of `true` is not hoisted.
+function example() {
+  console.log(declaredButNotAssigned); // =&gt; undefined
+  var declaredButNotAssigned = true;
+}
+
+// The interpreter is hoisting the variable
+// declaration to the top of the scope,
+// which means our example could be rewritten as:
+function example() {
+  var declaredButNotAssigned;
+  console.log(declaredButNotAssigned); // =&gt; undefined
+  declaredButNotAssigned = true;
+}
+</code></pre>
+
+</li>
+<li>
+<p>Anonymous function expressions hoist their variable name, but not the function assignment.</p>
+<pre><code class="javascript">function example() {
+  console.log(anonymous); // =&gt; undefined
+
+  anonymous(); // =&gt; TypeError anonymous is not a function
+
+  var anonymous = function() {
+    console.log('anonymous function expression');
+  };
+}
+</code></pre>
+
+</li>
+<li>
+<p>Named function expressions hoist the variable name, not the function name or the function body.</p>
+<pre><code class="javascript">function example() {
+  console.log(named); // =&gt; undefined
+
+  named(); // =&gt; TypeError named is not a function
+
+  superPower(); // =&gt; ReferenceError superPower is not defined
+
+  var named = function superPower() {
+    console.log('Flying');
+  };
+}
+
+// the same is true when the function name
+// is the same as the variable name.
+function example() {
+  console.log(named); // =&gt; undefined
+
+  named(); // =&gt; TypeError named is not a function
+
+  var named = function named() {
+    console.log('named');
+  }
+}
+</code></pre>
+
+</li>
+<li>
+<p>Function declarations hoist their name and the function body.</p>
+<pre><code class="javascript">function example() {
+  superPower(); // =&gt; Flying
+
+  function superPower() {
+    console.log('Flying');
+  }
+}
+</code></pre>
+
+</li>
+<li>
+<p>For more information refer to <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript Scoping &amp; Hoisting</a> by <a href="http://www.adequatelygood.com/">Ben Cherry</a>.</p>
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="comparison-operators-equality"><a name="user-content-comparison-operators-equality" href="#comparison-operators-equality" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Comparison Operators &amp; Equality</h2>
+<ul>
+<li>Use <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code>.</li>
+<li>
+<p>Conditional statements such as the <code>if</code> statement evaluate their expression using coercion with the <code>ToBoolean</code> abstract method and always follow these simple rules:</p>
+<ul>
+<li><strong>Objects</strong> evaluate to <strong>true</strong></li>
+<li><strong>Undefined</strong> evaluates to <strong>false</strong></li>
+<li><strong>Null</strong> evaluates to <strong>false</strong></li>
+<li><strong>Booleans</strong> evaluate to <strong>the value of the boolean</strong></li>
+<li><strong>Numbers</strong> evaluate to <strong>false</strong> if <strong>+0, -0, or NaN</strong>, otherwise <strong>true</strong></li>
+<li><strong>Strings</strong> evaluate to <strong>false</strong> if an empty string <code>''</code>, otherwise <strong>true</strong></li>
+</ul>
+<pre><code class="javascript">if ([0]) {
+  // true
+  // An array is an object, objects evaluate to true
+}
+</code></pre>
+
+</li>
+<li>
+<p>Use shortcuts.</p>
+<pre><code class="javascript">// bad
+if (name !== '') {
+  // ...stuff...
+}
+
+// good
+if (name) {
+  // ...stuff...
+}
+
+// bad
+if (collection.length &gt; 0) {
+  // ...stuff...
+}
+
+// good
+if (collection.length) {
+  // ...stuff...
+}
+</code></pre>
+
+</li>
+<li>
+<p>For more information see <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108">Truth Equality and JavaScript</a> by Angus Croll.</p>
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="blocks"><a name="user-content-blocks" href="#blocks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Blocks</h2>
+<ul>
+<li>
+<p>Use braces with all multi-line blocks.</p>
+<pre><code class="javascript">// bad
+if (test)
+  return false;
+
+// good
+if (test) return false;
+
+// good
+if (test) {
+  return false;
+}
+
+// bad
+function() { return false; }
+
+// good
+function() {
+  return false;
+}
+</code></pre>
+
+</li>
+<li>
+<p>If you&rsquo;re using multi-line blocks with <code>if</code> and <code>else</code>, put <code>else</code> on the next line, after your<br />
+<code>if</code> block&rsquo;s closing brace.</p>
+<pre><code class="javascript">// bad
+if (test) {
+  thing1();
+  thing2();
+} else {
+  thing3();
+}
+
+// good
+if (test) {
+  thing1();
+  thing2();
+}
+else {
+  thing3();
+}
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="comments"><a name="user-content-comments" href="#comments" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Comments</h2>
+<ul>
+<li>
+<p>Use <code>/** ... */</code> for multi-line comments. Include a description, specify types and values for all parameters and return values.</p>
+<pre><code class="javascript">// bad
+// make() returns a new element
+// based on the passed in tag name
+//
+// @param {String} tag
+// @return {Element} element
+function make(tag) {
+
+  // ...stuff...
+
+  return element;
+}
+
+// good
+/**
+ * make() returns a new element
+ * based on the passed in tag name
+ *
+ * @param {String} tag
+ * @return {Element} element
+ */
+function make(tag) {
+
+  // ...stuff...
+
+  return element;
+}
+</code></pre>
+
+</li>
+<li>
+<p>Use <code>//</code> for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.</p>
+<pre><code class="javascript">// bad
+var active = true;  // is current tab
+
+// good
+// is current tab
+var active = true;
+
+// bad
+function getType() {
+  console.log('fetching type...');
+  // set the default type to 'no type'
+  var type = this._type || 'no type';
+
+  return type;
+}
+
+// good
+function getType() {
+  console.log('fetching type...');
+
+  // set the default type to 'no type'
+  var type = this._type || 'no type';
+
+  return type;
+}
+</code></pre>
+
+</li>
+<li>
+<p>Prefixing your comments with <code>FIXME</code> or <code>TODO</code> helps other developers quickly understand if you&rsquo;re pointing out a problem that needs to be revisited, or if you&rsquo;re suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are <code>FIXME -- need to figure this out</code> or <code>TODO -- need to implement</code>.</p>
+</li>
+<li>
+<p>Use <code>// FIXME:</code> to annotate problems.</p>
+<pre><code class="javascript">function Calculator() {
+
+  // FIXME: shouldn't use a global here
+  total = 0;
+
+  return this;
+}
+</code></pre>
+
+</li>
+<li>
+<p>Use <code>// TODO:</code> to annotate solutions to problems.</p>
+<pre><code class="javascript">function Calculator() {
+
+  // TODO: total should be configurable by an options param
+  this.total = 0;
+
+  return this;
+}
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="whitespace"><a name="user-content-whitespace" href="#whitespace" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Whitespace</h2>
+<ul>
+<li>
+<p>Use soft tabs set to 2 spaces.  <strong>TODO: CodeAbode is currently on tab style - update style guide</strong> </p>
+<pre><code class="javascript">// bad
+function() {
+∙∙∙∙var name;
+}
+
+// bad
+function() {
+∙var name;
+}
+
+// good
+function() {
+∙∙var name;
+}
+</code></pre>
+
+</li>
+<li>
+<p>Place 1 space before the leading brace.</p>
+<pre><code class="javascript">// bad
+function test(){
+  console.log('test');
+}
+
+// good
+function test() {
+  console.log('test');
+}
+
+// bad
+dog.set('attr',{
+  age: '1 year',
+  breed: 'Bernese Mountain Dog'
+});
+
+// good
+dog.set('attr', {
+  age: '1 year',
+  breed: 'Bernese Mountain Dog'
+});
+</code></pre>
+
+</li>
+<li>
+<p>Place 1 space before the opening parenthesis in control statements (<code>if</code>, <code>while</code> etc.). Place no space before the argument list in function calls and declarations.</p>
+<pre><code class="javascript">// bad
+if(isJedi) {
+  fight ();
+}
+
+// good
+if (isJedi) {
+  fight();
+}
+
+// bad
+function fight () {
+  console.log ('Swooosh!');
+}
+
+// good
+function fight() {
+  console.log('Swooosh!');
+}
+</code></pre>
+
+</li>
+<li>
+<p>Set off operators with spaces.</p>
+<pre><code class="javascript">// bad
+var x=y+5;
+
+// good
+var x = y + 5;
+</code></pre>
+
+</li>
+<li>
+<p>End files with a single newline character.</p>
+<pre><code class="javascript">// bad
+(function(global) {
+  // ...stuff...
+})(this);
+</code></pre>
+
+<pre><code class="javascript">// bad
+(function(global) {
+  // ...stuff...
+})(this);↵
+↵
+</code></pre>
+
+<pre><code class="javascript">// good
+(function(global) {
+  // ...stuff...
+})(this);↵
+</code></pre>
+
+</li>
+<li>
+<p>Use indentation when making long method chains. Use a leading dot, which<br />
+    emphasizes that the line is a method call, not a new statement.</p>
+<pre><code class="javascript">// bad
+$('#items').find('.selected').highlight().end().find('.open').updateCount();
+
+// bad
+$('#items').
+  find('.selected').
+    highlight().
+    end().
+  find('.open').
+    updateCount();
+
+// good
+$('#items')
+  .find('.selected')
+    .highlight()
+    .end()
+  .find('.open')
+    .updateCount();
+
+// bad
+var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
+    .attr('width', (radius + margin) * 2).append('svg:g')
+    .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+    .call(tron.led);
+
+// good
+var leds = stage.selectAll('.led')
+    .data(data)
+  .enter().append('svg:svg')
+    .classed('led', true)
+    .attr('width', (radius + margin) * 2)
+  .append('svg:g')
+    .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+    .call(tron.led);
+</code></pre>
+
+</li>
+<li>
+<p>Leave a blank line after blocks and before the next statement</p>
+<pre><code class="javascript">// bad
+if (foo) {
+  return bar;
+}
+return baz;
+
+// good
+if (foo) {
+  return bar;
+}
+
+return baz;
+
+// bad
+var obj = {
+  foo: function() {
+  },
+  bar: function() {
+  }
+};
+return obj;
+
+// good
+var obj = {
+  foo: function() {
+  },
+
+  bar: function() {
+  }
+};
+
+return obj;
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="commas"><a name="user-content-commas" href="#commas" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Commas</h2>
+<ul>
+<li>
+<p>Leading commas: <strong>Nope.</strong></p>
+<pre><code class="javascript">// bad
+var story = [
+    once
+  , upon
+  , aTime
+];
+
+// good
+var story = [
+  once,
+  upon,
+  aTime
+];
+
+// bad
+var hero = {
+    firstName: 'Bob'
+  , lastName: 'Parr'
+  , heroName: 'Mr. Incredible'
+  , superPower: 'strength'
+};
+
+// good
+var hero = {
+  firstName: 'Bob',
+  lastName: 'Parr',
+  heroName: 'Mr. Incredible',
+  superPower: 'strength'
+};
+</code></pre>
+
+</li>
+<li>
+<p>Additional trailing comma: <strong>Nope.</strong> This can cause problems with IE6/7 and IE9 if it&rsquo;s in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 (<a href="http://es5.github.io/#D">source</a>):</p>
+</li>
+</ul>
+<blockquote>
+<p>Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.</p>
+</blockquote>
+<pre><code>```javascript
+// bad
+var hero = {
+  firstName: 'Kevin',
+  lastName: 'Flynn',
+};
+
+var heroes = [
+  'Batman',
+  'Superman',
+];
+
+// good
+var hero = {
+  firstName: 'Kevin',
+  lastName: 'Flynn'
+};
+
+var heroes = [
+  'Batman',
+  'Superman'
+];
+```
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="semicolons"><a name="user-content-semicolons" href="#semicolons" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Semicolons</h2>
+<ul>
+<li>
+<p><strong>Yup.</strong></p>
+<pre><code class="javascript">// bad
+(function() {
+  var name = 'Skywalker'
+  return name
+})()
+
+// good
+(function() {
+  var name = 'Skywalker';
+  return name;
+})();
+
+// good (guards against the function becoming an argument when two files with IIFEs are concatenated)
+;(function() {
+  var name = 'Skywalker';
+  return name;
+})();
+</code></pre>
+
+<p><a href="http://stackoverflow.com/a/7365214/1712802">Read more</a>.</p>
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="type-casting-coercion"><a name="user-content-type-casting-coercion" href="#type-casting-coercion" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Type Casting &amp; Coercion</h2>
+<ul>
+<li>Perform type coercion at the beginning of the statement.</li>
+<li>
+<p>Strings:</p>
+<pre><code class="javascript">//  =&gt; this.reviewScore = 9;
+
+// bad
+var totalScore = this.reviewScore + '';
+
+// good
+var totalScore = '' + this.reviewScore;
+
+// bad
+var totalScore = '' + this.reviewScore + ' total score';
+
+// good
+var totalScore = this.reviewScore + ' total score';
+</code></pre>
+
+</li>
+<li>
+<p>Use <code>parseInt</code> for Numbers and always with a radix for type casting.</p>
+<pre><code class="javascript">var inputValue = '4';
+
+// bad
+var val = new Number(inputValue);
+
+// bad
+var val = +inputValue;
+
+// bad
+var val = inputValue &gt;&gt; 0;
+
+// bad
+var val = parseInt(inputValue);
+
+// good
+var val = Number(inputValue);
+
+// good
+var val = parseInt(inputValue, 10);
+</code></pre>
+
+</li>
+<li>
+<p>If for whatever reason you are doing something wild and <code>parseInt</code> is your bottleneck and need to use Bitshift for <a href="http://jsperf.com/coercion-vs-casting/3">performance reasons</a>, leave a comment explaining why and what you&rsquo;re doing.</p>
+<pre><code class="javascript">// good
+/**
+ * parseInt was the reason my code was slow.
+ * Bitshifting the String to coerce it to a
+ * Number made it a lot faster.
+ */
+var val = inputValue &gt;&gt; 0;
+</code></pre>
+
+</li>
+<li>
+<p><strong>Note:</strong> Be careful when using bitshift operations. Numbers are represented as <a href="http://es5.github.io/#x4.3.19">64-bit values</a>, but Bitshift operations always return a 32-bit integer (<a href="http://es5.github.io/#x11.7">source</a>). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. <a href="https://github.com/airbnb/javascript/issues/109">Discussion</a>. Largest signed 32-bit Int is 2,147,483,647:</p>
+<pre><code class="javascript">2147483647 &gt;&gt; 0 //=&gt; 2147483647
+2147483648 &gt;&gt; 0 //=&gt; -2147483648
+2147483649 &gt;&gt; 0 //=&gt; -2147483647
+</code></pre>
+
+</li>
+<li>
+<p>Booleans:</p>
+<pre><code class="javascript">var age = 0;
+
+// bad
+var hasAge = new Boolean(age);
+
+// good
+var hasAge = Boolean(age);
+
+// good
+var hasAge = !!age;
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="naming-conventions"><a name="user-content-naming-conventions" href="#naming-conventions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Naming Conventions</h2>
+<ul>
+<li>
+<p>Avoid single letter names. Be descriptive with your naming.</p>
+<pre><code class="javascript">// bad
+function q() {
+  // ...stuff...
+}
+
+// good
+function query() {
+  // ..stuff..
+}
+</code></pre>
+
+</li>
+<li>
+<p>Use camelCase when naming objects, functions, and instances.</p>
+<pre><code class="javascript">// bad
+var OBJEcttsssss = {};
+var this_is_my_object = {};
+var o = {};
+function c() {}
+
+// good
+var thisIsMyObject = {};
+function thisIsMyFunction() {}
+</code></pre>
+
+</li>
+<li>
+<p>Use PascalCase when naming constructors or classes.</p>
+<pre><code class="javascript">// bad
+function user(options) {
+  this.name = options.name;
+}
+
+var bad = new user({
+  name: 'nope'
+});
+
+// good
+function User(options) {
+  this.name = options.name;
+}
+
+var good = new User({
+  name: 'yup'
+});
+</code></pre>
+
+</li>
+<li>
+<p>Use a leading underscore <code>_</code> when naming private properties.</p>
+<pre><code class="javascript">// bad
+this.__firstName__ = 'Panda';
+this.firstName_ = 'Panda';
+
+// good
+this._firstName = 'Panda';
+</code></pre>
+
+</li>
+<li>
+<p>When saving a reference to <code>this</code> use <code>_this</code>.</p>
+<pre><code class="javascript">// bad
+function() {
+  var self = this;
+  return function() {
+    console.log(self);
+  };
+}
+
+// bad
+function() {
+  var that = this;
+  return function() {
+    console.log(that);
+  };
+}
+
+// good
+function() {
+  var _this = this;
+  return function() {
+    console.log(_this);
+  };
+}
+</code></pre>
+
+</li>
+<li>
+<p>Name your functions. This is helpful for stack traces.</p>
+<pre><code class="javascript">// bad
+var log = function(msg) {
+  console.log(msg);
+};
+
+// good
+var log = function log(msg) {
+  console.log(msg);
+};
+</code></pre>
+
+</li>
+<li>
+<p><strong>Note:</strong> IE8 and below exhibit some quirks with named function expressions.  See <a href="http://kangax.github.io/nfe/"><a href="http://kangax.github.io/nfe/"><a href="http://kangax.github.io/nfe/">http://kangax.github.io/nfe/</a></a></a> for more info.</p>
+</li>
+<li>
+<p>If your file exports a single class, your filename should be exactly the name of the class.<br />
+    <pre><code class="javascript">// file contents
+class CheckBox {
+  // ...
+}
+module.exports = CheckBox;
+
+// in some other file
+// bad
+var CheckBox = require('./checkBox');
+
+// bad
+var CheckBox = require('./check_box');
+
+// good
+var CheckBox = require('./CheckBox');
+</code></pre></p>
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="accessors"><a name="user-content-accessors" href="#accessors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Accessors</h2>
+<ul>
+<li>Accessor functions for properties are not required.</li>
+<li>
+<p>If you do make accessor functions use getVal() and setVal(&lsquo;hello&rsquo;).</p>
+<pre><code class="javascript">// bad
+dragon.age();
+
+// good
+dragon.getAge();
+
+// bad
+dragon.age(25);
+
+// good
+dragon.setAge(25);
+</code></pre>
+
+</li>
+<li>
+<p>If the property is a boolean, use isVal() or hasVal().</p>
+<pre><code class="javascript">// bad
+if (!dragon.age()) {
+  return false;
+}
+
+// good
+if (!dragon.hasAge()) {
+  return false;
+}
+</code></pre>
+
+</li>
+<li>
+<p>It&rsquo;s okay to create get() and set() functions, but be consistent.</p>
+<pre><code class="javascript">function Jedi(options) {
+  options || (options = {});
+  var lightsaber = options.lightsaber || 'blue';
+  this.set('lightsaber', lightsaber);
+}
+
+Jedi.prototype.set = function(key, val) {
+  this[key] = val;
+};
+
+Jedi.prototype.get = function(key) {
+  return this[key];
+};
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="constructors"><a name="user-content-constructors" href="#constructors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Constructors</h2>
+<ul>
+<li>
+<p>Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you&rsquo;ll overwrite the base!</p>
+<pre><code class="javascript">function Jedi() {
+  console.log('new jedi');
+}
+
+// bad
+Jedi.prototype = {
+  fight: function fight() {
+    console.log('fighting');
+  },
+
+  block: function block() {
+    console.log('blocking');
+  }
+};
+
+// good
+Jedi.prototype.fight = function fight() {
+  console.log('fighting');
+};
+
+Jedi.prototype.block = function block() {
+  console.log('blocking');
+};
+</code></pre>
+
+</li>
+<li>
+<p>Methods can return <code>this</code> to help with method chaining.</p>
+<pre><code class="javascript">// bad
+Jedi.prototype.jump = function() {
+  this.jumping = true;
+  return true;
+};
+
+Jedi.prototype.setHeight = function(height) {
+  this.height = height;
+};
+
+var luke = new Jedi();
+luke.jump(); // =&gt; true
+luke.setHeight(20); // =&gt; undefined
+
+// good
+Jedi.prototype.jump = function() {
+  this.jumping = true;
+  return this;
+};
+
+Jedi.prototype.setHeight = function(height) {
+  this.height = height;
+  return this;
+};
+
+var luke = new Jedi();
+
+luke.jump()
+  .setHeight(20);
+</code></pre>
+
+</li>
+<li>
+<p>It&rsquo;s okay to write a custom toString() method, just make sure it works successfully and causes no side effects.</p>
+<pre><code class="javascript">function Jedi(options) {
+  options || (options = {});
+  this.name = options.name || 'no name';
+}
+
+Jedi.prototype.getName = function getName() {
+  return this.name;
+};
+
+Jedi.prototype.toString = function toString() {
+  return 'Jedi - ' + this.getName();
+};
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="events"><a name="user-content-events" href="#events" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Events</h2>
+<ul>
+<li>
+<p>When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:</p>
+<pre><code class="js">// bad
+$(this).trigger('listingUpdated', listing.id);
+
+...
+
+$(this).on('listingUpdated', function(e, listingId) {
+  // do something with listingId
+});
+</code></pre>
+
+<p>prefer:</p>
+<pre><code class="js">// good
+$(this).trigger('listingUpdated', { listingId : listing.id });
+
+...
+
+$(this).on('listingUpdated', function(e, data) {
+  // do something with data.listingId
+});
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="modules"><a name="user-content-modules" href="#modules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modules</h2>
+<ul>
+<li>The module should start with a <code>!</code>. This ensures that if a malformed module forgets to include a final semicolon there aren&rsquo;t errors in production when the scripts get concatenated. <a href="https://github.com/airbnb/javascript/issues/44#issuecomment-13063933">Explanation</a></li>
+<li>The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.</li>
+<li>Add a method called <code>noConflict()</code> that sets the exported module to the previous version and returns this one.</li>
+<li>
+<p>Always declare <code>'use strict';</code> at the top of the module.</p>
+<pre><code class="javascript">// fancyInput/fancyInput.js
+
+!function(global) {
+  'use strict';
+
+  var previousFancyInput = global.FancyInput;
+
+  function FancyInput(options) {
+    this.options = options || {};
+  }
+
+  FancyInput.noConflict = function noConflict() {
+    global.FancyInput = previousFancyInput;
+    return FancyInput;
+  };
+
+  global.FancyInput = FancyInput;
+}(this);
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="ecmascript-5-compatibility"><a name="user-content-ecmascript-5-compatibility" href="#ecmascript-5-compatibility" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ECMAScript 5 Compatibility</h2>
+<ul>
+<li>Refer to <a href="https://twitter.com/kangax/">Kangax</a>&lsquo;s ES5 <a href="http://kangax.github.com/es5-compat-table/">compatibility table</a>.</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="testing"><a name="user-content-testing" href="#testing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Testing</h2>
+<ul>
+<li>
+<p><strong>Yup.</strong></p>
+<pre><code class="javascript">function() {
+  return true;
+}
+</code></pre>
+
+</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="performance"><a name="user-content-performance" href="#performance" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Performance</h2>
+<ul>
+<li><a href="http://kellegous.com/j/2013/01/26/layout-performance/">On Layout &amp; Web Performance</a></li>
+<li><a href="http://jsperf.com/string-vs-array-concat/2">String vs Array Concat</a></li>
+<li><a href="http://jsperf.com/try-catch-in-loop-cost">Try/Catch Cost In a Loop</a></li>
+<li><a href="http://jsperf.com/bang-function">Bang Function</a></li>
+<li><a href="http://jsperf.com/jquery-find-vs-context-sel/13">jQuery Find vs Context, Selector</a></li>
+<li><a href="http://jsperf.com/innerhtml-vs-textcontent-for-script-text">innerHTML vs textContent for script text</a></li>
+<li><a href="http://jsperf.com/ya-string-concat">Long String Concatenation</a></li>
+<li>Loading&hellip;</li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="resources"><a name="user-content-resources" href="#resources" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resources</h2>
+<p><strong>Read This</strong></p>
+<ul>
+<li><a href="http://es5.github.com/">Annotated ECMAScript 5.1</a></li>
+</ul>
+<p><strong>Tools</strong></p>
+<ul>
+<li>Code Style Linters<ul>
+<li><a href="http://www.jshint.com/">JSHint</a> - <a href="https://github.com/airbnb/javascript/blob/master/linters/jshintrc">Airbnb Style .jshintrc</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs">JSCS</a> - <a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json">Airbnb Style Preset</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Other Style Guides</strong></p>
+<ul>
+<li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
+<li><a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery Core Style Guidelines</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/">Principles of Writing Consistent, Idiomatic JavaScript</a></li>
+<li><a href="https://github.com/feross/standard">JavaScript Standard Style</a></li>
+</ul>
+<p><strong>Other Styles</strong></p>
+<ul>
+<li><a href="https://gist.github.com/4135065">Naming this in nested functions</a> - Christian Johansen</li>
+<li><a href="https://github.com/airbnb/javascript/issues/52">Conditional Callbacks</a> - Ross Allen</li>
+<li><a href="http://sideeffect.kr/popularconvention/#javascript">Popular JavaScript Coding Conventions on Github</a> - JeongHoon Byun</li>
+<li><a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/">Multiple var statements in JavaScript, not superfluous</a> - Ben Alman</li>
+</ul>
+<p><strong>Further Reading</strong></p>
+<ul>
+<li><a href="http://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/">Understanding JavaScript Closures</a> - Angus Croll</li>
+<li><a href="http://www.2ality.com/2013/06/basic-javascript.html">Basic JavaScript for the impatient programmer</a> - Dr. Axel Rauschmayer</li>
+<li><a href="http://youmightnotneedjquery.com/">You Might Not Need jQuery</a> - Zack Bloom &amp; Adam Schwartz</li>
+<li><a href="https://github.com/lukehoban/es6features">ES6 Features</a> - Luke Hoban</li>
+<li><a href="https://github.com/bendc/frontend-guidelines">Frontend Guidelines</a> - Benjamin De Cock</li>
+</ul>
+<p><strong>Books</strong></p>
+<ul>
+<li><a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">JavaScript: The Good Parts</a> - Douglas Crockford</li>
+<li><a href="http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752">JavaScript Patterns</a> - Stoyan Stefanov</li>
+<li><a href="http://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X">Pro JavaScript Design Patterns</a>  - Ross Harmes and Dustin Diaz</li>
+<li><a href="http://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309">High Performance Web Sites: Essential Knowledge for Front-End Engineers</a> - Steve Souders</li>
+<li><a href="http://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680">Maintainable JavaScript</a> - Nicholas C. Zakas</li>
+<li><a href="http://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X">JavaScript Web Applications</a> - Alex MacCaw</li>
+<li><a href="http://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273">Pro JavaScript Techniques</a> - John Resig</li>
+<li><a href="http://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595">Smashing Node.js: JavaScript Everywhere</a> - Guillermo Rauch</li>
+<li><a href="http://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X">Secrets of the JavaScript Ninja</a> - John Resig and Bear Bibeault</li>
+<li><a href="http://humanjavascript.com/">Human JavaScript</a> - Henrik Joreteg</li>
+<li><a href="http://superherojs.com/">Superhero.js</a> - Kim Joar Bekkelund, Mads Mobæk, &amp; Olav Bjorkoy</li>
+<li><a href="http://jsbooks.revolunet.com/">JSBooks</a> - Julien Bouquillon</li>
+<li><a href="http://manning.com/vinegar/">Third Party JavaScript</a> - Ben Vinegar and Anton Kovalyov</li>
+<li><a href="http://amzn.com/0321812182">Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</a> - David Herman</li>
+<li><a href="http://eloquentjavascript.net">Eloquent JavaScript</a> - Marijn Haverbeke</li>
+<li><a href="https://github.com/getify/You-Dont-Know-JS">You Don&rsquo;t Know JS</a> - Kyle Simpson</li>
+</ul>
+<p><strong>Blogs</strong></p>
+<ul>
+<li><a href="http://dailyjs.com/">DailyJS</a></li>
+<li><a href="http://javascriptweekly.com/">JavaScript Weekly</a></li>
+<li><a href="http://javascriptweblog.wordpress.com/">JavaScript, JavaScript&hellip;</a></li>
+<li><a href="http://weblog.bocoup.com/">Bocoup Weblog</a></li>
+<li><a href="http://www.adequatelygood.com/">Adequately Good</a></li>
+<li><a href="http://www.nczonline.net/">NCZOnline</a></li>
+<li><a href="http://perfectionkills.com/">Perfection Kills</a></li>
+<li><a href="http://benalman.com/">Ben Alman</a></li>
+<li><a href="http://dmitry.baranovskiy.com/">Dmitry Baranovskiy</a></li>
+<li><a href="http://dustindiaz.com/">Dustin Diaz</a></li>
+<li><a href="http://net.tutsplus.com/?s=javascript">nettuts</a></li>
+</ul>
+<p><strong>Podcasts</strong></p>
+<ul>
+<li><a href="http://devchat.tv/js-jabber/">JavaScript Jabber</a></li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="license"><a name="user-content-license" href="#license" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>License</h2>
+<p>(The MIT License)</p>
+<p>Copyright (c) 2014 Airbnb</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining<br />
+a copy of this software and associated documentation files (the<br />
+&lsquo;Software&rsquo;), to deal in the Software without restriction, including<br />
+without limitation the rights to use, copy, modify, merge, publish,<br />
+distribute, sublicense, and/or sell copies of the Software, and to<br />
+permit persons to whom the Software is furnished to do so, subject to<br />
+the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be<br />
+included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &lsquo;AS IS&rsquo;, WITHOUT WARRANTY OF ANY KIND,<br />
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF<br />
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.<br />
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY<br />
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,<br />
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE<br />
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p></article></body></html>
