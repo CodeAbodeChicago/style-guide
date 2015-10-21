@@ -1,6 +1,6 @@
 # CodeAbode JavaScript (ES5) Style Guide
 
-*Forked from Airbnb's "mostly reasonable approach to JavaScript"*
+*Using Airbnb's "mostly reasonable approach to JavaScript" as a starting point*
 
 ## Table of Contents
 
